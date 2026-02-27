@@ -16,7 +16,7 @@ public class PostRepository extends BaseRepository<Post> {
     private static final String UPDATE_QUERY = "UPDATE posts SET description = ?, post_date = ? WHERE id = ?";
 
     public PostRepository(JdbcTemplate jdbc, RowMapper<Post> mapper) {
-        super(jdbc, mapper, Post.class);
+        super(jdbc, mapper);
     }
 
     public Post save(Post post) {
