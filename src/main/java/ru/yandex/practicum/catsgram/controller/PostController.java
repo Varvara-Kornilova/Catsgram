@@ -46,11 +46,11 @@ public class PostController {
         return postService.findById(postId);
     }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Post create(@RequestBody Post post) {
-        return postService.create(post);
-    }
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)
+//    public Post create(@RequestBody Post post) {
+//        return postService.create(post);
+//    }
 
     @PutMapping
     public Post update(@RequestBody Post newPost) {

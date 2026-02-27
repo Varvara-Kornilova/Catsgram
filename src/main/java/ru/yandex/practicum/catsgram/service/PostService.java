@@ -34,22 +34,22 @@ public class PostService {
                 .toList();
     }
 
-    public Post create(Post post) {
-        if (post.getDescription() == null || post.getDescription().isBlank()) {
-            throw new ConditionsNotMetException("Описание не может быть пустым");
-        }
-
-        long authorId = post.getAuthorId();
-
-        if (userService.findUserById(authorId).isEmpty()) {
-            throw new ConditionsNotMetException("Автор с id = " + authorId + " не найден");
-        }
-
-        post.setId(getNextId());
-        post.setPostDate(Instant.now());
-        posts.put(post.getId(), post);
-        return post;
-    }
+//    public Post create(Post post) {
+//        if (post.getDescription() == null || post.getDescription().isBlank()) {
+//            throw new ConditionsNotMetException("Описание не может быть пустым");
+//        }
+//
+//        long authorId = post.getAuthorId();
+//
+//        if (userService.findUserById(authorId).isEmpty()) {
+//            throw new ConditionsNotMetException("Автор с id = " + authorId + " не найден");
+//        }
+//
+//        post.setId(getNextId());
+//        post.setPostDate(Instant.now());
+//        posts.put(post.getId(), post);
+//        return post;
+//    }
 
     public Post update(Post newPost) {
         if (newPost.getId() == null) {
